@@ -8,11 +8,9 @@ def plot_pca(X, y, save_path="../results/pca_visualization.png"):
     """
     Reduces features to 2D using PCA and plots points colored by diabetes outcome.
     """
-    #to reduce dimensions
     pca = PCA(n_components=2)
     X_pca = pca.fit_transform(X)
 
-    # for plot
     plt.figure(figsize=(8,6))
     sns.scatterplot(
         x=X_pca[:,0], 
@@ -28,3 +26,4 @@ def plot_pca(X, y, save_path="../results/pca_visualization.png"):
     plt.tight_layout()
     plt.savefig(save_path)  
     plt.close()
+
